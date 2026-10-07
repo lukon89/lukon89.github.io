@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lukasz Konera — Senior Python Backend Engineer</title>
+  <title>Lukasz Konera — Senior Python / Fullstack Engineer</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,8 +19,6 @@
       --green: #16a34a;
       --green-bg: #f0fdf4;
       --green-border: #bbf7d0;
-      --yellow: #ca8a04;
-      --yellow-bg: #fefce8;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
@@ -47,7 +45,7 @@
       border-bottom: 1px solid var(--border);
     }
     nav .inner {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -56,17 +54,15 @@
       height: 56px;
     }
     nav .logo { font-weight: 700; font-size: 15px; color: var(--text); letter-spacing: -0.3px; }
-    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
     nav ul a { font-size: 14px; color: var(--text-muted); transition: color 0.15s; }
     nav ul a:hover { color: var(--accent); text-decoration: none; }
 
     /* ── Container ── */
-    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 
     /* ── Hero ── */
-    .hero {
-      padding: 88px 0 80px;
-    }
+    .hero { padding: 88px 0 72px; }
     .hero .badge {
       display: inline-flex;
       align-items: center;
@@ -82,33 +78,43 @@
     }
     .hero .badge::before {
       content: '';
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--green);
       flex-shrink: 0;
       animation: pulse 2s infinite;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
     .hero h1 {
-      font-size: clamp(40px, 7vw, 62px);
+      font-size: clamp(38px, 7vw, 60px);
       font-weight: 800;
       letter-spacing: -2px;
       line-height: 1.08;
+      margin-bottom: 8px;
+    }
+    .hero .tagline {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--accent);
       margin-bottom: 20px;
-      color: var(--text);
+      letter-spacing: -0.3px;
     }
-    .hero h1 .wave { display: inline-block; }
     .hero .subtitle {
-      font-size: 19px;
+      font-size: 17px;
       color: var(--text-muted);
-      max-width: 560px;
+      max-width: 600px;
       margin-bottom: 36px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
+    .hero .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .hero .meta span { display: flex; align-items: center; gap: 6px; }
     .hero .cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
     .btn {
@@ -123,27 +129,19 @@
       cursor: pointer;
       border: none;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 2px 12px rgba(91, 94, 244, 0.25);
-    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 2px 12px rgba(91, 94, 244, 0.25); }
     .btn-primary:hover { background: var(--accent-hover); text-decoration: none; box-shadow: 0 4px 20px rgba(91, 94, 244, 0.35); }
-    .btn-outline {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      color: var(--text);
-    }
+    .btn-outline { background: var(--surface); border: 1.5px solid var(--border); color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
     /* ── Divider ── */
-    .divider { height: 1px; background: var(--border); margin: 0; }
+    .divider { height: 1px; background: var(--border); }
 
     /* ── Sections ── */
-    section { padding: 72px 0; }
+    section { padding: 64px 0; }
     .section-label {
       display: inline-block;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -151,20 +149,10 @@
       background: var(--accent-light);
       border-radius: 6px;
       padding: 3px 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
-    h2 {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -0.8px;
-      margin-bottom: 8px;
-    }
-    .section-intro {
-      color: var(--text-muted);
-      font-size: 16px;
-      margin-bottom: 36px;
-      max-width: 520px;
-    }
+    h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 6px; }
+    .section-intro { color: var(--text-muted); font-size: 15px; margin-bottom: 32px; max-width: 520px; }
 
     /* ── About ── */
     .about-card {
@@ -173,17 +161,13 @@
       border-radius: 16px;
       padding: 32px;
     }
-    .about-card p {
-      color: var(--text-muted);
-      font-size: 16.5px;
-      line-height: 1.8;
-    }
-    .about-card p + p { margin-top: 16px; }
+    .about-card p { color: var(--text-muted); font-size: 16px; line-height: 1.8; }
+    .about-card p + p { margin-top: 14px; }
 
     /* ── Skills ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 14px;
     }
     .skill-card {
@@ -193,67 +177,47 @@
       padding: 22px;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .skill-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(91, 94, 244, 0.08);
-    }
-    .skill-card h3 {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
+    .skill-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(91, 94, 244, 0.08); }
+    .skill-card h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 12px; }
     .skill-card ul { list-style: none; }
     .skill-card ul li {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
       padding: 3px 0;
       display: flex;
-      align-items: center;
-      gap: 6px;
+      align-items: flex-start;
+      gap: 7px;
     }
     .skill-card ul li::before {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 5px; height: 5px;
       border-radius: 50%;
       background: var(--border);
       flex-shrink: 0;
+      margin-top: 7px;
     }
 
     /* ── Experience ── */
-    .exp-list { display: flex; flex-direction: column; gap: 24px; }
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
     .exp-item {
       background: var(--surface);
       border: 1.5px solid var(--border);
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px 32px;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .exp-item:hover {
-      border-color: rgba(91, 94, 244, 0.3);
-      box-shadow: 0 4px 24px rgba(91, 94, 244, 0.07);
-    }
+    .exp-item:hover { border-color: rgba(91, 94, 244, 0.3); box-shadow: 0 4px 24px rgba(91, 94, 244, 0.07); }
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 6px;
     }
-    .exp-role { font-size: 19px; font-weight: 700; letter-spacing: -0.3px; }
-    .exp-company {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 4px;
-    }
+    .exp-role { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+    .exp-company { color: var(--accent); font-size: 14px; font-weight: 600; margin-top: 3px; }
+    .exp-company-desc { font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 2px; margin-bottom: 14px; }
     .exp-period {
       font-size: 13px;
       color: var(--text-muted);
@@ -262,86 +226,73 @@
       border-radius: 20px;
       padding: 4px 12px;
       white-space: nowrap;
+      flex-shrink: 0;
     }
-    .exp-body { color: var(--text-muted); font-size: 15px; line-height: 1.75; }
-    .exp-body ul {
-      margin-top: 14px;
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .exp-body ul li {
-      padding-left: 20px;
-      position: relative;
-    }
-    .exp-body ul li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
-    .tag {
-      font-size: 12px;
-      color: var(--accent);
-      background: var(--accent-light);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-weight: 500;
-    }
+    .exp-section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin: 14px 0 8px; }
+    .exp-body { color: var(--text-muted); font-size: 14.5px; line-height: 1.75; }
+    .exp-body ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .exp-body ul li { padding-left: 20px; position: relative; }
+    .exp-body ul li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 12px; top: 2px; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .tag { font-size: 12px; color: var(--accent); background: var(--accent-light); border-radius: 6px; padding: 3px 9px; font-weight: 500; }
 
-    /* ── Contact ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    /* ── Education ── */
+    .edu-list { display: flex; flex-direction: column; gap: 14px; }
+    .edu-item {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .edu-degree { font-size: 16px; font-weight: 700; }
+    .edu-school { font-size: 14px; color: var(--accent); font-weight: 600; margin-top: 3px; }
+    .edu-thesis { font-size: 13px; color: var(--text-muted); font-style: italic; margin-top: 4px; }
+    .edu-year { font-size: 13px; color: var(--text-muted); background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; white-space: nowrap; }
+
+    /* ── Interests ── */
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .interest-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
       gap: 14px;
     }
+    .interest-card .icon { font-size: 24px; flex-shrink: 0; }
+    .interest-card .info .title { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .interest-card .info .desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── Contact ── */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
     .contact-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 22px 24px;
+      padding: 20px 22px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       transition: all 0.15s;
     }
-    .contact-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(91, 94, 244, 0.1);
-      text-decoration: none;
-    }
-    .contact-card .icon {
-      font-size: 24px;
-      width: 44px;
-      height: 44px;
-      background: var(--accent-light);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-card .info { display: flex; flex-direction: column; }
+    .contact-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(91, 94, 244, 0.1); text-decoration: none; }
+    .contact-card .icon { font-size: 22px; width: 42px; height: 42px; background: var(--accent-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .contact-card .info .label { font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
     .contact-card .info .value { font-size: 14px; font-weight: 600; color: var(--text); }
 
     /* ── Footer ── */
-    footer {
-      padding: 32px 0 40px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-    }
+    footer { padding: 32px 0 40px; text-align: center; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); }
 
-    @media (max-width: 540px) {
+    @media (max-width: 600px) {
       .hero { padding: 56px 0 48px; }
-      nav ul { gap: 16px; }
+      nav ul { gap: 14px; }
+      .exp-item { padding: 22px 20px; }
     }
   </style>
 </head>
@@ -354,6 +305,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -365,10 +317,16 @@
   <div class="hero">
     <div class="badge">Open to senior remote roles</div>
     <h1>Hi, I'm Lukasz 👋</h1>
-    <p class="subtitle">Senior Python backend engineer who loves building reliable, event-driven systems in fintech — clean code, clear boundaries, and services that just work.</p>
+    <div class="tagline">Senior Python / Fullstack Engineer · AI-augmented development</div>
+    <p class="subtitle">10+ years building scalable backend systems and microservice architectures, primarily in Python. Now extending into fullstack delivery and agentic AI workflows.</p>
+    <div class="meta">
+      <span>📍 Wrocław, Poland</span>
+      <span>🌍 Remote-first</span>
+      <span>🐍 10+ years Python</span>
+    </div>
     <div class="cta">
       <a class="btn btn-primary" href="https://www.linkedin.com/in/lukasz-konera-4b0083ab/" target="_blank" rel="noopener">View LinkedIn ↗</a>
-      <a class="btn btn-outline" href="mailto:lukasz.konera@gmail.com">Get in touch</a>
+      <a class="btn btn-outline" href="mailto:lukaszkonera@gmail.com">Get in touch</a>
     </div>
   </div>
 
@@ -380,9 +338,9 @@
     <h2>Who I am</h2>
     <p class="section-intro">A bit about my background and what drives me.</p>
     <div class="about-card">
-      <p>I'm a senior Python backend engineer with a background in fintech, currently working at OakNorth — a UK-based digital bank — where I build and maintain event-driven microservices, REST APIs, and data pipelines. My day-to-day work involves Python, FastAPI, PostgreSQL, RabbitMQ, AWS, and Terraform, with a focus on clean architecture, reliability, and developer experience.</p>
-      <p>I'm drawn to teams that care about code quality and async communication, where engineers have real ownership of what they ship. I enjoy working on complex backend challenges — whether that's designing resilient service boundaries, modelling domain logic precisely, or improving the parts of a system that are invisible until they break.</p>
-      <p>Outside of work I'm interested in distributed systems, type safety, and the kind of infrastructure that makes engineering feel smooth rather than painful.</p>
+      <p>Results-oriented Senior Engineer with 10+ years of experience building scalable backend systems and microservice-based architectures, primarily in Python, now extending into fullstack delivery (React, TypeScript). Self-driven and accountable for delivering projects from inception to completion, with a strong focus on teamwork and collaboration.</p>
+      <p>Adept at turning complex requirements into clean, efficient solutions and fostering collaboration within cross-functional teams. A power user of AI-assisted development tools (Cursor AI, Claude Code, Claude CLI) to accelerate delivery without compromising code quality.</p>
+      <p>I enjoy working on complex backend challenges — whether that's designing resilient service boundaries, modelling domain logic precisely, or improving the parts of a system that are invisible until they break.</p>
     </div>
   </section>
 
@@ -395,57 +353,78 @@
     <p class="section-intro">The tools and technologies I work with every day.</p>
     <div class="skills-grid">
       <div class="skill-card">
-        <h3>Languages</h3>
+        <h3>Backend</h3>
         <ul>
-          <li>Python (primary)</li>
-          <li>SQL</li>
-          <li>TypeScript</li>
-          <li>Bash / HCL</li>
+          <li>Python 3.x (primary)</li>
+          <li>FastAPI, asyncio</li>
+          <li>Django / DRF</li>
+          <li>REST API design & development</li>
+          <li>API performance & optimisation</li>
+          <li>Microservice architecture</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Frameworks</h3>
+        <h3>AI & Agentic</h3>
         <ul>
-          <li>FastAPI</li>
-          <li>asyncio</li>
-          <li>Pydantic</li>
-          <li>SQLAlchemy / Tortoise</li>
+          <li>Cursor AI, Claude Code</li>
+          <li>MCP servers</li>
+          <li>Agentic AI toolkits</li>
+          <li>LLM tool-calling</li>
+          <li>Prompt engineering</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Infrastructure</h3>
+        <h3>RAG & LLM Apps</h3>
         <ul>
-          <li>AWS (ECS, Lambda, SQS)</li>
-          <li>Terraform</li>
-          <li>Docker</li>
-          <li>Kubernetes / Helm</li>
+          <li>RAG prototyping</li>
+          <li>Vector databases</li>
+          <li>Embeddings & chunking</li>
+          <li>LangChain / LangGraph</li>
+          <li>LLM-based Q&A</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <ul>
+          <li>React, TypeScript</li>
+          <li>HTML, CSS</li>
+          <li>Fullstack-capable</li>
         </ul>
       </div>
       <div class="skill-card">
         <h3>Data & Messaging</h3>
         <ul>
-          <li>PostgreSQL</li>
+          <li>PostgreSQL, Redis, SQLite</li>
+          <li>Tortoise ORM, Aerich</li>
           <li>RabbitMQ</li>
-          <li>SNS / SQS</li>
           <li>BigQuery</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Practices</h3>
+        <h3>Cloud & DevOps</h3>
         <ul>
-          <li>Event-driven design</li>
-          <li>Domain-driven design</li>
-          <li>REST API design</li>
-          <li>CI/CD (GitHub Actions)</li>
+          <li>AWS (ECS, Lambda, RDS, SNS, SQS, S3…)</li>
+          <li>Terraform</li>
+          <li>Docker, Kubernetes</li>
+          <li>GitLab / GitHub CI</li>
         </ul>
       </div>
       <div class="skill-card">
-        <h3>Tooling</h3>
+        <h3>Testing</h3>
         <ul>
-          <li>Poetry / pyproject.toml</li>
-          <li>Ruff / pyright</li>
-          <li>pytest / testcontainers</li>
-          <li>Grafana / Loki / Sentry</li>
+          <li>pytest</li>
+          <li>Unit / integration / E2E</li>
+          <li>TDD</li>
+          <li>Postman, Swagger</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Observability</h3>
+        <ul>
+          <li>Grafana, Loki</li>
+          <li>Sentry</li>
+          <li>OpenTelemetry</li>
+          <li>Metabase</li>
         </ul>
       </div>
     </div>
@@ -457,41 +436,206 @@
   <section id="experience">
     <span class="section-label">Experience</span>
     <h2>Where I've worked</h2>
-    <p class="section-intro">My professional journey so far.</p>
+    <p class="section-intro">10+ years across fintech, telecom, blockchain, and mobile — always owning things end-to-end.</p>
     <div class="exp-list">
 
       <div class="exp-item">
         <div class="exp-header">
           <div>
-            <div class="exp-role">Senior Python Backend Engineer</div>
-            <div class="exp-company">🏦 OakNorth · UK Digital Bank</div>
+            <div class="exp-role">Senior Fullstack Engineer (Python, React, TypeScript)</div>
+            <div class="exp-company">🏦 OakNorth (formerly Monite, acquired Dec 2026)</div>
           </div>
-          <div class="exp-period">2022 — present</div>
+          <div class="exp-period">Dec 2026 – Present</div>
         </div>
+        <div class="exp-company-desc">Global bank and technology platform for businesses. Following its acquisition of Monite, Monite's invoicing and payment orchestration technology was integrated into OakNorth's business banking platform.</div>
+        <div class="exp-section-title">Key achievements</div>
         <div class="exp-body">
-          <p>Building and maintaining Finance Automation — a suite of event-driven microservices that powers bank feeds, payment record ingestion, accounting integrations (Xero), and invoice workflows for UK SMEs. The system processes financial transactions in real time using a RabbitMQ fanout architecture, deployed on AWS ECS and Kubernetes.</p>
           <ul>
-            <li>Designed and shipped the bank feeds ingestion pipeline — from SNS event to reconciled transaction</li>
-            <li>Built the Xero accounting connection service including OAuth flow, ledger account sync, and counterpart auto-matching</li>
-            <li>Owned payment record consumer end-to-end: schema design, consumer logic, idempotency, and backfill infrastructure</li>
-            <li>Improved developer tooling, CI reliability, and observability (Grafana / Loki dashboards)</li>
-            <li>Contributed Terraform modules for ECS tasks, SQS queues, and RDS security group rules</li>
+            <li>Major contributor to a large-scale integration of OakNorth's business banking application with Monite's invoicing and bill-pay functionality, bringing accounts receivable and accounts payable capabilities into the bank's core platform.</li>
+            <li>In a 4-month engagement within a small two-developer team, designed and built a full Xero accounting integration covering invoices, bills, payments, contacts, products, and bank feeds.</li>
+            <li>Active member of an internal AI enablement initiative; co-authored an agentic AI toolkit that works through the engineering backlog in a semi-automated way, combining LLM agents with custom tools and workflows.</li>
+            <li>Contributed to a 3-person initiative building a RAG prototype over OakNorth's Notion workspace — covering ingestion/chunking, embeddings, vector search, and LLM-based Q&A with source citations.</li>
+            <li>Power user of AI-assisted development workflows (Cursor AI, Claude Code, Claude CLI), applying MCP servers, custom skills, and rules to accelerate delivery while maintaining code quality.</li>
           </ul>
         </div>
         <div class="exp-tags">
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">RabbitMQ</span>
-          <span class="tag">AWS ECS</span>
-          <span class="tag">Terraform</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">Xero API</span>
-          <span class="tag">asyncio</span>
-          <span class="tag">Pydantic</span>
+          <span class="tag">Python 3.12</span><span class="tag">FastAPI</span><span class="tag">Pydantic</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">AWS ECS</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Embeddings</span>
         </div>
       </div>
 
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Senior Backend Engineer (Python)</div>
+            <div class="exp-company">💳 Monite</div>
+          </div>
+          <div class="exp-period">May 2022 – Nov 2026</div>
+        </div>
+        <div class="exp-company-desc">Fintech SaaS providing accounts receivable, accounts payable, and payments solutions via a flexible API. Acquired by OakNorth in December 2026.</div>
+        <div class="exp-section-title">Key achievements</div>
+        <div class="exp-body">
+          <ul>
+            <li>Initiated and led development of an abstract onboarding layer, providing a unified onboarding experience across multiple payment providers, improving onboarding success rate and user experience.</li>
+            <li>Major contributor to the Yapily Open Banking integration, enabling secure, automated SEPA Credit payments across several European countries.</li>
+            <li>Built Stripe payment processing for the European market using Connect and the PaymentIntent API, covering onboarding, confirmation, and webhook-driven settlement.</li>
+            <li>Designed and implemented Stripe Treasury integration (US accounts payable payments), covering bank account verification and payment processing.</li>
+            <li>Led research and implementation of invoice VAT calculation improvements, resolving rounding discrepancies across tax groups and line items.</li>
+            <li>Built a new PDF template system using a custom HTML/Jinja architecture for generating documents from receivables objects.</li>
+          </ul>
+        </div>
+        <div class="exp-tags">
+          <span class="tag">Python 3.10</span><span class="tag">FastAPI</span><span class="tag">asyncio</span><span class="tag">PostgreSQL</span><span class="tag">Tortoise ORM</span><span class="tag">RabbitMQ</span><span class="tag">Redis</span><span class="tag">React</span><span class="tag">Stripe</span><span class="tag">Yapily</span><span class="tag">Grafana</span><span class="tag">Sentry</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Senior Python Developer (Blockchain / Solana)</div>
+            <div class="exp-company">⛓️ Twinstake via 4Soft</div>
+          </div>
+          <div class="exp-period">Sep 2024 – Nov 2024</div>
+        </div>
+        <div class="exp-company-desc">Side project during a break from Monite. 4Soft delivers blockchain and fintech solutions for international clients; Twinstake provides institutional-grade staking infrastructure for blockchains.</div>
+        <div class="exp-section-title">Key achievements</div>
+        <div class="exp-body">
+          <ul>
+            <li>Independently designed and implemented a staking API for the Solana blockchain, covering system architecture, research, and full documentation for non-custodial staking operations.</li>
+            <li>Built a custom Solana client library for node communication and implemented byte-level message crafting compliant with the Solana transaction protocol.</li>
+            <li>Developed a durable-nonce transaction mechanism using rent-exempt nonce accounts, ensuring reliable unsigned transactions without private key access.</li>
+          </ul>
+        </div>
+        <div class="exp-tags">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Solana Web3 API</span><span class="tag">AWS Lambda</span><span class="tag">RDS</span><span class="tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Senior Backend Engineer & Team Leader (Python)</div>
+            <div class="exp-company">📡 Falcon V Systems (acquired by Vecima Networks)</div>
+          </div>
+          <div class="exp-period">Aug 2017 – Apr 2022</div>
+        </div>
+        <div class="exp-company-desc">Telecommunications software for HFC (Hybrid Fiber-Coax) networks, covering both control plane and data plane.</div>
+        <div class="exp-section-title">Key achievements</div>
+        <div class="exp-body">
+          <ul>
+            <li>Developed and maintained a device monitoring service to collect and visualize operational data from hardware devices across HFC networks.</li>
+            <li>Contributed significantly to a REST API microservice responsible for applying and managing device configurations in HFC networks.</li>
+            <li>Played a major role in building a comprehensive E2E testing framework to ensure product reliability and high code quality standards.</li>
+            <li>Created a TLV library to encode/decode byte messages for configuring RPD devices in HFC networks.</li>
+          </ul>
+        </div>
+        <div class="exp-tags">
+          <span class="tag">Python</span><span class="tag">asyncio</span><span class="tag">pytest</span><span class="tag">Django</span><span class="tag">DRF</span><span class="tag">RabbitMQ</span><span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Backend Engineer (C++, Python)</div>
+            <div class="exp-company">📶 Nokia</div>
+          </div>
+          <div class="exp-period">Jul 2016 – Jul 2017</div>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Developed components of a large-scale control plane system for Base Transceiver Stations (BTS), a core element of cellular network infrastructure.</li>
+            <li>Implemented new functionality and contributed to system enhancements in collaboration with cross-functional engineering teams.</li>
+          </ul>
+        </div>
+        <div class="exp-tags">
+          <span class="tag">C++</span><span class="tag">Python</span><span class="tag">pytest</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Junior Backend Engineer (Java / C++)</div>
+            <div class="exp-company">🚌 Trapeze</div>
+          </div>
+          <div class="exp-period">Feb 2014 – Jun 2016</div>
+        </div>
+        <div class="exp-body">
+          <ul>
+            <li>Co-developed the Control Center application (Java) — a dispatcher platform for managing and monitoring tram and bus fleets in real time.</li>
+            <li>Contributed to on-board computer software (C++) for trams and buses, enabling communication between vehicles and the central control system.</li>
+          </ul>
+        </div>
+        <div class="exp-tags">
+          <span class="tag">Java</span><span class="tag">C++</span><span class="tag">WebSockets</span><span class="tag">SOAP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Education -->
+  <section id="education">
+    <span class="section-label">Education</span>
+    <h2>Academic background</h2>
+    <p class="section-intro">Educated in computer science and control systems at one of Poland's top technical universities.</p>
+    <div class="edu-list">
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Master's Degree — Technologies in Control Systems</div>
+          <div class="edu-school">Wrocław University of Technology</div>
+          <div class="edu-thesis">Thesis: Perturbation algorithms in the task scheduling problem</div>
+        </div>
+        <div class="edu-year">2013</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Engineering Degree — Technologies in Control Systems</div>
+          <div class="edu-school">Wrocław University of Technology</div>
+        </div>
+        <div class="edu-year">2012</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Interests -->
+  <section id="interests">
+    <span class="section-label">Interests</span>
+    <h2>Beyond the keyboard</h2>
+    <p class="section-intro">A few things that matter outside of work.</p>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="icon">👨‍👩‍👧</div>
+        <div class="info">
+          <div class="title">Family</div>
+          <div class="desc">Family time is top priority.</div>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🤼</div>
+        <div class="info">
+          <div class="title">Sport</div>
+          <div class="desc">Former professional Greco-Roman wrestler — multiple Polish Championship medalist and former national team member. Also martial arts, gym, and football.</div>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🎮</div>
+        <div class="info">
+          <div class="title">Gaming</div>
+          <div class="desc">Heroes of Might & Magic III — a classic.</div>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="icon">🎸</div>
+        <div class="info">
+          <div class="title">Music</div>
+          <div class="desc">Rock: Serj Tankian, Iron Maiden, Metallica, Linkin Park.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -501,7 +645,7 @@
   <section id="contact">
     <span class="section-label">Contact</span>
     <h2>Let's talk 😊</h2>
-    <p class="section-intro">I'm open to senior backend roles, fully remote from Poland. Always happy to have a chat.</p>
+    <p class="section-intro">Open to senior backend and fullstack roles, fully remote from Poland. Always happy to have a chat.</p>
     <div class="contact-grid">
       <a class="contact-card" href="https://www.linkedin.com/in/lukasz-konera-4b0083ab/" target="_blank" rel="noopener">
         <div class="icon">💼</div>
@@ -510,11 +654,11 @@
           <span class="value">lukasz-konera</span>
         </span>
       </a>
-      <a class="contact-card" href="mailto:lukasz.konera@gmail.com">
+      <a class="contact-card" href="mailto:lukaszkonera@gmail.com">
         <div class="icon">✉️</div>
         <span class="info">
           <span class="label">Email</span>
-          <span class="value">lukasz.konera@gmail.com</span>
+          <span class="value">lukaszkonera@gmail.com</span>
         </span>
       </a>
       <a class="contact-card" href="https://github.com/lukon89" target="_blank" rel="noopener">
@@ -531,7 +675,7 @@
 
 <footer>
   <div class="container">
-    Made with ☀️ · Lukasz Konera · Senior Python Backend Engineer · Remote from Poland
+    Made with ☀️ · Lukasz Konera · Senior Python / Fullstack Engineer · Wrocław, Poland
   </div>
 </footer>
 
